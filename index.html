@@ -1,0 +1,59 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="default.css"/>
+        <link type="text/css" rel="stylesheet" href="simpleslider.css"/>
+        <script type="text/javascript" src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/overlayBox.js"></script>
+        <script type="text/javascript" src="js/libs/simpleslider.js"></script>
+        <style>
+            #overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url('overlay-bg.png') repeat;
+                opacity: 0;
+            }
+            #overlay .overlay-content {
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="overlay">&nbsp;</div>
+        <div id="layout">
+            <a href="#" id="button">Ez egy gomb</a>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#button').on({
+                    click: function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        var contentData = "Valami";
+
+                        $('#overlay').overlayBox(contentData, {
+                            closeBtnId: '#overlay-close',
+                            contentBlockWidth: '264',
+                            zIndexValue: '10',
+                            onOverlayLoaded: function(el) {
+                                console.info(el)
+                            },
+                            onOverlayClosed: function() {
+                                console.info('CLOSED OVERLAY');
+                            }
+                        });
+                    }
+                });
+
+            });
+        </script>
+    </body>
+</html>
