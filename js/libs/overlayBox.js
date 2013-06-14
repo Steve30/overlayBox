@@ -170,7 +170,7 @@
                         this.overlayContentEl = contentEl.eq(0);
                     }
 
-                    contentHeight = (this.overlayContentEl.children('.serverdata')) ? this.dataFromServer.loadedContentHeight : this.overlayContentEl.height();
+                    contentHeight = (this.overlayContentEl.children('.serverdata').size() > 0) ? this.dataFromServer.loadedContentHeight : this.overlayContentEl.height();
 
                     top = (this.el.height() - contentHeight) / 2;
                     left = (this.el.width() - this.contentBlockWidth) / 2;
