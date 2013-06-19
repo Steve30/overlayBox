@@ -75,9 +75,7 @@
                         };
                     }
 
-                    this.el.css(cssObj).animate({
-                        opacity : 1
-                    }, this.displayContent());
+                    this.el.css(cssObj).fadeIn(this.displayContent());
 
                 },
 
@@ -95,6 +93,7 @@
                 },
 
                 renderContent: function() {
+
                     if (this.closeBtnId !== undefined) {
                         this.closeBtnEl = $(this.closeBtnId);
                     }
@@ -192,7 +191,7 @@
 
                 setCenterDone : function() {
                     this.overlayContentEl.css({
-                        visibility : 'visible'
+                        display: 'block'
                     });
 
                     this.el.trigger('onOverlayLoaded');
@@ -204,10 +203,8 @@
 
                     var pluginObj = e.data.obj;
 
-                    if (e.keyCode === 27 || e.target.id === 'overlay') {
-                        pluginObj.el.animate({
-                            opacity : 0
-                        }, function(){
+                    if (e.keyCode === 27 || e.target.id === 'overlay' || e.target.id === pluginObj.closeBtnId.split('#')[1]) {
+                        pluginObj.el.fadeOut(function(){
                             pluginObj.animateHideCallback(pluginObj);
                         });
                     }
@@ -220,7 +217,7 @@
                         pluginObj.overlayContentEl.remove();
                     } else {
                         pluginObj.overlayContentEl.css({
-                            visibility: 'hidden'
+                            display: 'none'
                         });
                     }
 
