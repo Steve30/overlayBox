@@ -16,10 +16,10 @@ and open the template in the editor.
 				top: 0;
 				left: 0;
 				background: url('overlay-bg.png') repeat;
-				opacity: 0;
+				display: none;
 			}
 			#overlay .overlay-content {
-				visibility: hidden;
+				display: none;
 				height: auto;
 			}
 			#overlay .loaded-content,
@@ -27,6 +27,12 @@ and open the template in the editor.
 				float: left;
 				display: none;
 				height: 300px;
+			}
+
+			#overlay #overlay-close {
+				position: absolute;
+				top: 5px;
+				right: 5px;
 			}
 		</style>
 	</head>
@@ -45,7 +51,7 @@ and open the template in the editor.
                         e.preventDefault();
                         e.stopPropagation();
 
-                        var contentData = "Valami";
+                        var contentData = "<a href=# id='overlay-close'>X</a>Valami";
 
                         $('#overlay').overlayBox({
                             closeBtnId : '#overlay-close',
@@ -57,17 +63,7 @@ and open the template in the editor.
                             onOverlayClosed : function() {
                                 console.info('CLOSED OVERLAY');
                             }
-                        }, {
-                        	dataFromServer : {
-                                method : 'GET',
-                                dataType : 'JSON',
-                                url: $(this).attr('href'),
-                                loaderIcon : 'ajax-loader.gif',
-                                loaderId: 'loader',
-                                error_404_html: "<img src='404-not-found.gif' alt=''/>",
-                                loadedContentHeight: 250
-                            }
-                        });
+                        }, contentData);
                     }
                 });
 
