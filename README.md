@@ -1,16 +1,27 @@
 overlayBox
 ==========
-This a new overlay Jquery Plugin.
-It has a simple configuration, fast plugin and compatible the all modern browser
+<p>This a new overlay Jquery Plugin.<br/>
+It has a simple configuration, fast plugin and compatible the all modern browser.</p>
 
-<h2>
+<div>
+<h3>
   Support Browsers:
-</h2>
+</h3>
+<ul>
+  <li>IE9 and above</li>
+  <li>Chrome</li>
+  <li>Firefox</li>
+</ul>
+</div>
 
-<h2>
+<div>
+<h3>
   Configration:
-</h2>
+</h3>
+</div>
 
-<h2>
+<div>
+<h3>
   Demos:
-</h2>
+</h3>
+</div>
