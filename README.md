@@ -16,7 +16,7 @@ It has a simple configuration, fast plugin and compatible the all modern browser
 
 <div>
 <h3>
-  Configration:
+  Configuration:
 </h3>
 </div>
 
