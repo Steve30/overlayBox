@@ -28,6 +28,9 @@ It has a simple configuration, fast plugin and compatible the all modern browser
         closeBtnId: '#overlay-close'; This is a close button DOM id and default value.
       </li>
       <li>
+        contentBlockWidth: ''; The overlay content block of width.
+      </li>
+      <li>
         onOverlayLoaded: function(el); This is a function property. This run, when the overlay is displayed.
       </li>
       <li>
