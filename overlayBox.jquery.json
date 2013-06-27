@@ -1,0 +1,36 @@
+{
+    "name": "overlayBox",
+    "title": "jQuery overlay or popup",
+    "description": "jQuery plugin for popup box or overlay box",
+    "keywords": [
+        "overlay",
+        "animation",
+        "popup",
+        "ui",
+        "effect",
+        "jquery"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Juhász István",
+        "email": "juhasz.istvan28@windowslive.com"
+    },
+    "maintainers": [
+        {
+            "name": "Juhász István",
+            "email": "juhasz.istvan28@windowslive.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/Steve30/overlayBox/blob/master/license"
+        }
+    ],
+    "bugs": "https://github.com/Steve30/overlayBox/issues",
+    "homepage": "https://github.com/Steve30/overlayBox",
+    "docs": "https://github.com/Steve30/overlayBox",
+    "dependencies": {
+        "jquery": ">=1.8"
+    }
+}
