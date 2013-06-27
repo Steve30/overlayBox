@@ -1,0 +1,74 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OverlayBox - Demo 2 - Generate data from HTML</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link type="text/css" rel="stylesheet" href="../default.css"/>
+		<script type="text/javascript" src="../js/libs/jquery-1.9.0/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/libs/overlayBox.js"></script>
+		<style>
+			#overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url('../overlay-bg.png') repeat;
+				display: none;
+			}
+			#overlay .overlay-content {
+				display: none;
+				height: auto;
+			}
+			#overlay .loaded-content,
+			#overlay .error-content {
+				float: left;
+				display: none;
+				height: 300px;
+			}
+
+			#overlay #overlay-close {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="overlay">
+			<div class="overlay-content">This is a content</div>
+			<div class="overlay-content">This is an other content</div>
+		</div>
+		<div id="layout">
+			<a href='#' class="button" data-overlay-btn-id='1'>Ez egy gomb</a>
+			<a href='#' class="button" data-overlay-btn-id='2'>Ez egy másik gomb</a>
+		</div>
+		<script type="text/javascript">
+            $(document).ready(function() {
+                $('.button').on({
+                    click : function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        var contentData = "<a href=# id='overlay-close'>X</a>Valami";
+
+                        $('#overlay').overlayBox({
+                            closeBtnId : '#overlay-close',
+                            contentBlockWidth : '400',
+                            zIndexValue : '10',
+                            onOverlayLoaded : function(el) {
+                                console.info(el)
+                            },
+                            onOverlayClosed : function() {
+                                console.info('CLOSED OVERLAY');
+                            }
+                        }, $(this));
+                    }
+                });
+
+            });
+		</script>
+	</body>
+</html>

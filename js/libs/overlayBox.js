@@ -47,8 +47,7 @@
                     if (this.options.layoutId !== '') {
                         this.layoutEl = $('#' + this.options.layoutId);
                     }
-
-
+                    	
                     if($.isPlainObject(this.htmlData)) {
                         this.dataFromServer = this.htmlData.dataFromServer;
                     };
