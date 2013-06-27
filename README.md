@@ -78,4 +78,7 @@ It has a simple configuration, fast plugin and compatible the all modern browser
 <h3>
   Demos:
 </h3>
+<p>
+  You find 3 demo page in the Demos folder.
+</p>
 </div>
