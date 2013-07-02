@@ -80,5 +80,7 @@ It has a simple configuration, fast plugin and compatible the all modern browser
 </h3>
 <p>
   You find 3 demo page in the Demos folder.
+  <br/>
+  Note: If click on the overlay - not on the overlay content - the overlay is closed.
 </p>
 </div>
