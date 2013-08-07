@@ -1,7 +1,6 @@
 (function($) {
     $.fn.extend({
         overlayBox : function(options, htmlData) {
-            var self = this;
 
             this.defaults = {
                 layoutId : '',
@@ -280,13 +279,13 @@
             }
 
             this.init = function(opt) {
-                $.proxy(self.plugin.initialize(this, opt, htmlData), self.plugin);
+                $.proxy(this.plugin.initialize(this, opt, htmlData), this.plugin);
             };
 
-            constructor = function() {
-                self.options = $.extend(self.defaults, options);
-                self.init(self.options);
-            }();
+            constructor = function(plugin) {
+                plugin.options = $.extend(plugin.defaults, options);
+                plugin.init(plugin.options);
+            }(this);
 
         }
     });
